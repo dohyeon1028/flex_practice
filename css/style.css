@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* 폰트 */
+@import "reset.css" ;
+
+
+/* 
+flex는 display: flex;이다. 
+블록 속성을 가로로 배치할 떄 사용하는데, float와는 다르게 가로배치하고자 하는 요소의 부모 요소에 적용하는 속성이다.
+부모인 자신은 블록속성이 되고, 자식 요소에는 flex환경을 설정해서 좌우 배치하도록 한다. display : inline-flex => 부모인 자신은 inline 속성이 되고 자식 요소에 flex 환경을 설정하는 것이다.  
+*/
+
+
+main{
+    width: 100%;
+    height: 100vh;
+    background-color: lightcyan;
+}
+
+section{
+    width: 100%;
+    height: 100%;
+    border: 5px solid blue;
+    display: flex;
+
+    flex-direction: row;
+    /* flex-direction는 자식 요소의 정렬 방향을 지정하는 것으로, 값을 주지 않으면 기본 값인 row가 적용된다. row는 가로, column은 세로. row-reverse는 가로로 정렬하는데 역순으로 배치하는 것.(row는 '좌->우'였다면, row-reverse는 '우->좌' 기준점 또한, 좌상단에서 우상단으로 이동.) */
+
+    flex-wrap: wrap;
+    /* flex-wrap: wrap은 flex 사용시 줄바꿈을 허용하는지, 안하는지를 결정해주는 것으로 기본값인 'flex-wrap: wrap;'은 줄바꿈을 허용한다. no-wrap은 줄바꿈을 허용하지 않아 하나의 row에 10개든 100개든 모두 집어넣는다.*/
+
+    flex-flow: row wrap;
+    /* flex-flow는 flex-direction과 flex-wrap을 합친 것으로, flex-flow: (flex-direction) (flex-wrap);으로 작성한다. 사용빈도는 낮다.  */
+
+    /* justify-content: end; */
+
+    /* 지정한 지정한 주축을 정렬하는 방법. center는 가운데 정렬, flex-start는 기본값으로 자식요소를 시작 방향에서부터 정렬한다. flex-end는 종료 방향에서부터 정렬한다. justify-content: end와 flex-direction: row-reverse의 차이점은 정렬의 순서이다. end는 마지막 블럭을 우상단에 붙이고, row-reverse는 순서도 반전, 기준점또한 교차축을 중심으로 반전시킨다.*/
+
+    /* justify-content:space-evenly;와 justify-content: space-around;의 차이점. around는 좌우 여백이 동일하고 블록 사이사이 여백이 중복되지 않는다.(ex:1 2 2 2 1) evenly또한 좌우 여백이 동일하나, 사이사이 여백이 중복된다.(ex:1 1 1 1 1)   */
+    
+    /* justify-content:space-between;는 자식 요소의 블럭을 균일한 간격으로 배치하고 시작과 끝은 부모 요소 끝에 맞춘다. */
+
+    /* align-items: center; */
+    
+    align-content: center;
+    justify-content: center;
+    /* 위 두 코드는 같은 뜻 */
+
+    /* align-items: ;에서 item은 부모요소가 가지고 있는 자식요소. 즉 section에서의 itemd는 article이다. */
+
+    /* align-items: ;와align-content: ;의 공통점은 교차축으로 정렬하는 방법이다. space-@@@와 같은 정렬방법도 사용가능하다.*/
+
+}
+
+section article{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    border: 1px solid #000;
+}
+
+

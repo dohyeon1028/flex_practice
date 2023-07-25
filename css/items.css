@@ -1,0 +1,49 @@
+@charset "UTF-8";
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+}
+
+main section{
+    width: 100%;
+    height: 100%;
+    border: 5px solid #000;
+    display: flex;
+}
+
+main section article{
+    width: 400px;
+    height: 100px;
+    border: 1px solid #000;
+}
+
+/* order : 자식요소의 순서를 지정하는 것 값이 크면 뒤로감 */
+
+/* flex-grow : 요소 안쪽의 여백을 확대하는 것. 기본값은 0.
+0을 주면 늘어나지 않는다. 1부터는 부모의 너비를 다 채우되 해당 비율만큼만 채우게 된다. */
+
+/* flex-shrink는 flex-grow의 개념의 반대이다. 요소 안의 여백을 축소하기 0을 주면 줄어들지 않고, 1이상의 값에서 부모의 너비에 따라 주어진 비율대로 줄게 된다. */
+
+/* flex-basis는 기본 박스의 단위를 지정하는 속성이다. px, %도 가능하다. */
+
+/* flex:1 ; => flex-grow: 1; flex-shrink: 1; flex-basis: 0% */
+
+main section article:nth-of-type(1){
+    flex: 1.5;
+    /* flex값이 1보다 크면 flex-grow값으로만 적용된다. */
+}
+
+main section article:nth-of-type(2){
+    flex: 1;
+}
+
+main section article:nth-of-type(3){
+    flex: 1;
+}
